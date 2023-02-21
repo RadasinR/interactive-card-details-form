@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Interactive card details form</title>
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+
+  <main>
+
+    <article class="cardDetails">
+
+      <header class="header">
+        <div class="card">
+          <section class="card card__back">
+            <p id="cardCVC" class="card__cvc small-text">000</p>
+          </section>
+
+          <section class="card card__front">
+            <img class="card__logo" src="images/card-logo.svg"
+              alt="big white filled circle and small white outlined circle">
+            <div>
+              <p id="cardNumber" class="card__number">0000 0000 0000 0000</p>
+              <div class="flex-sb small-text">
+                <p id="cardHolder" class="card__holder">Jane Appleseed</p>
+                <p class="card__expDate"><span id="cardExpMM">00</span>/<span id="cardExpYY">00</span></p>
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </header>
+
+      <section class="flex-center">
+
+        <form class="form__card" novalidate>
+          <label  class="label gutter-1" for="cardHodler">Cardholder Name
+            <input  class="input__card" type="text" name="cardHolder" placeholder="e.g. Jane Appleseed" required>
+            <span class="error" aria-live="polite"></span>
+          </label>
+
+          <label class="label gutter-1" for="">Card Number
+            <input  class="input__card" type="text" name="cardNumber" placeholder="e.g. 1234 5678 9123 0000" required>
+              <span class="error" aria-live="polite"></span>
+          </label>
+
+          <section class="flex gutter-2">
+            <label class="label gutter-1"><span class="no-wrap">Exp. Date (MM/YY)</span>
+              <div class="group-MMYY  flex gutter-1">
+                <input class="input__card group-MMYYCVC-input" type="text" name="cardExpMM" placeholder="MM"
+                 required>
+                <input class="input__card group-MMYYCVC-input" type="text" name="cardExpYY" placeholder="YY"
+                 required>
+                 <span class="error errorMMYY" aria-live="polite"></span>
+              </div>
+              
+            </label>
+
+            <label class="label gutter-1" for="">CVC
+
+              <input class="input__card group-MMYYCVC-input" type="text" name="cardCVC" placeholder="e.g. 123"
+                 required>
+                <span class="error" aria-live="polite"></span>
+            </label>
+          </section>
+
+          <button class="btn bg-purple" type="submit">Confirm</button>
+
+
+        </form>
+        <section class="submited hidden">
+          <img src="images/icon-complete.svg" alt="check mark">
+          <section class="textBox center">
+            <h2 class="submited__title">Thank you!</h2>
+            <p class="submited__text">We've added your card details</p>
+          </section>
+          <button class="btn bg-purple" ondblclick="reset()">Continue</button>
+
+        </section>
+      </section>
+    </article>
+
+    <!-- Completed state start -->
+
+  </main>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Igor</a>.
+  </div>
+  <script src="/js/script.js"></script>
+</body>
+
+</html>

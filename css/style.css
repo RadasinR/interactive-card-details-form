@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+/* RESET */
+
+* {
+   position: relative;
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+/* set font to be 10px when the default font size is 16px */
+html {
+   font-size: 62.5%;
+}
+
+button,
+input {
+   font-family: inherit;
+   font-size: inherit;
+   font-weight: inherit;
+}
+
+/* CUSTOME PROPERTIES */
+
+:root {
+   /* COLORS */
+   /* primary */
+   --ACTIVE-INPUT-BORDER: hsl(249, 99%, 64%);
+   --ACTIVE-INPUT-OUTLINE: hsl(278, 94%, 30%);
+   --RED: hsl(0, 100%, 66%);
+
+   /* neutrals */
+   --WHITE: hsl(0, 0%, 100%);
+   --LIGHT-GRAYISH-VIOLET: hsl(270, 3%, 87%);
+   --DARK-GRAYISH-VIOLET: hsl(279, 6%, 55%);
+   --VERY-DARK-VIOLET: hsl(278, 68%, 11%);
+
+   /* TYPOGRAPHY */
+   --FS-SMALL: clamp(1.3rem, 2vw, 1.8rem);
+   --FS: clamp(1.8rem, 5vw, 2rem);
+   --FF: 'Space Grotesk', sans-serif;
+   --REGULAR: 500;
+
+}
+
+/* GENERAL STYLES */
+body {
+   font-size: var(--FS);
+   font-family: var(--FF);
+   font-weight: var(--REGULAR);
+}
+
+/* UTILS */
+
+.hidden {
+   display: none !important; /* no overwrites with other display values */
+}
+
+.flex {
+   display: flex;
+}
+
+.flex-sb {
+   display: flex;
+   justify-content: space-between;
+}
+
+.flex-center {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.small-text {
+   font-size: var(--FS-SMALL);
+}
+
+.no-wrap {
+   word-break: keep-all;
+   white-space: nowrap;
+}
+
+.gutter-1 {
+   gap: 1rem;
+}
+
+.gutter-2 {
+   gap: 2rem;
+}
+
+.bg-purple {
+   background-color: var(--VERY-DARK-VIOLET);
+   color: var(--WHITE);
+}
+
+.center {
+   text-align: center;
+}
+
+.textBox {
+   display: grid;
+   gap: 2rem;
+}
+
+/* error classes */
+
+.error {
+  color: var(--RED);
+  font-family: var(--FF);
+  font-size: 1.4rem;
+  text-transform: none;
+}
+
+.errorMMYY {
+   position: absolute;
+   bottom: -4rem;
+}
+
+
+/* STYLES */
+.header {
+   height: clamp(25rem, 30vw, 50rem);
+   margin-bottom: 15%;
+   background-color: var(--VERY-DARK-VIOLET);
+   background-image: url("/images/bg-main-mobile.png");
+   background-repeat: no-repeat;
+   background-size: cover;
+   font-size: clamp(1.8rem, 5vw, 3rem);
+   display: flex;
+   padding: 10% 6%;
+   justify-content: flex-end;
+
+}
+
+
+
+
+.card {
+   width: clamp(26.52rem, 50vw, 44.7rem);
+   height: clamp(14.4rem, 27.4vw, 24.5rem);
+   color: var(--WHITE);
+   background-repeat: no-repeat;
+   background-size: cover;
+   border-radius: 1rem;
+}
+
+.card__back {
+   background-image: url("/images/bg-card-back.png");
+}
+
+.card__cvc {
+   padding: 24% 0;
+   margin-left: 80%;
+}
+
+.card__front {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   background-image: url("/images/bg-card-front.png");
+
+   /* postion */
+   position: absolute;
+   z-index: 2;
+   right: 15%;
+   top: 59%;
+   padding: 5%;
+
+}
+
+.card__logo {
+   width: clamp(4.98rem, 15%, 8.4rem);
+}
+
+.card__number {
+   width: 100%;
+   margin-bottom: 8%;
+   letter-spacing: 0.18rem;
+}
+
+/* form */
+
+.form__card {
+   display: flex;
+   flex-direction: column;
+   padding: 5%;
+   gap: 3rem;
+}
+
+.label {
+   text-transform: uppercase;
+   letter-spacing: 0.1rem;
+   display: flex;
+   flex-direction: column;
+}
+
+.input__card {
+   padding: 3%;
+   border: 0.1rem solid var(--LIGHT-GRAYISH-VIOLET);
+   outline: 0.1rem solid #33333300;
+   letter-spacing: 0.1rem;
+   border-radius: 1rem;
+}
+
+.input__card:is(:focus, :active) {
+   border: 1px solid var(--ACTIVE-INPUT-BORDER);
+   border: 1px solid var(--ACTIVE-INPUT-OUTLINE);
+
+}
+
+.input__card.invalid {
+   border: 1px solid var(--RED);
+}
+.group-MMYYCVC-input  {
+   width: 10rem;
+   height: 4rem;
+}
+
+
+.btn {
+   width: 100%;
+   padding: 3%;
+   border: none;
+   outline: transparent;
+   border-radius: 1rem;
+   cursor: pointer;
+}
+
+/* thanks section */
+
+.submited {
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   gap: 4rem;
+   justify-content: center;
+   align-items: center;
+   padding: 5%;
+}
+.submited__text {
+   color: var(--DARK-GRAYISH-VIOLET);
+}
+
+@media screen and (min-width:1440px) {
+   body {
+      min-height: 100vh;
+
+   }
+
+   main {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2%;
+   }
+
+   .cardDetails {
+      display: flex;
+      width: 144rem;
+      height: 80rem;
+      box-shadow: 10px 10px 30px #333;
+     
+   }
+
+   .header {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+      background-image: url("/images/bg-main-desktop.png");
+      width: clamp(26.52rem, 50vw, 44.7rem);
+      height: auto;
+      margin-bottom: 0;
+    
+
+   }
+
+   .card__back {
+      position: absolute;
+      top: 60%;
+      left: 10rem;     
+   }
+
+   .card__front {
+      position: absolute;
+      top: -60%;
+      left: 5rem;
+
+   }
+
+   .flex-center {
+      margin-left: 35rem;
+   }
+   .form__card {
+     
+      padding: 15%;
+
+   }
+
+   .group-MMYYCVC-input {
+      height: 5rem;
+   }
+
+   .submited {
+      padding: 0;
+   }
+}
+

@@ -38,7 +38,7 @@ input {
 
    /* TYPOGRAPHY */
    --FS-SMALL: clamp(1.3rem, 2vw, 1.8rem);
-   --FS: clamp(1.8rem, 5vw, 2rem);
+   --FS: clamp(1.8rem, 4vw, 2rem);
    --FF: 'Space Grotesk', sans-serif;
    --REGULAR: 500;
 
@@ -125,7 +125,7 @@ body {
    background-image: url("/images/bg-main-mobile.png");
    background-repeat: no-repeat;
    background-size: cover;
-   font-size: clamp(1.8rem, 5vw, 3rem);
+   font-size: clamp(1.8rem, 4vw, 3rem);
    display: flex;
    padding: 10% 6%;
    justify-content: flex-end;

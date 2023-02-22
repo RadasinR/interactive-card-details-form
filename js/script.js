@@ -95,6 +95,16 @@ function error(input, message) {
 function reset() {
     hidden();
     document.querySelector(".form__card").reset();
+    resetCardData();
+   
+}
+
+function resetCardData() {
+    document.getElementById("cardCVC").innerText = DEFAULTS.cardCVC;
+    document.getElementById("cardNumber").innerText = DEFAULTS.cardNumber;
+    document.getElementById("cardHolder").innerText = DEFAULTS.cardHolder;
+    document.getElementById("cardExpMM").innerText = DEFAULTS.cardExpMM;
+    document.getElementById("cardExpYY").innerText = DEFAULTS.cardExpYY;
 }
 
 
